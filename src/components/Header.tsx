@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-=======
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
 import { Search, Menu, X, Heart, Moon, Sun } from 'lucide-react';
 import { useWishlist } from '../contexts/WishlistContext';
 import { useDarkMode } from '../contexts/DarkModeContext';
@@ -18,14 +13,7 @@ const Header = ({ onSearch }: HeaderProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const { state: wishlistState } = useWishlist();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-<<<<<<< HEAD
-  const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
-=======
-  const navigate = useNavigate();
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,35 +21,8 @@ const Header = ({ onSearch }: HeaderProps) => {
     navigate('/products');
   };
 
-<<<<<<< HEAD
-    // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  return (
-    <header 
-      className={`fixed  w-full z-50 transition-all duration-300 ${
-        isHomePage 
-          ? (scrolled ? 'bg-white bg-opacity-95 shadow-md py-2' : 'bg-transparent py-4')
-          : 'bg-amber-600 shadow-md py-2'
-      }`}
-    >
-=======
   return (
     <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -75,28 +36,6 @@ const Header = ({ onSearch }: HeaderProps) => {
           </Link>
 
           {/* Desktop Navigation */}
-<<<<<<< HEAD
-          <nav className="hidden md:flex space-x-8">
-            <Link to="/" className={`${
-              isHomePage 
-                ? (scrolled ? 'text-slate-800' : 'text-white') 
-                : 'text-white'
-            } hover:text-amber-200 transition-colors`}>
-              Home
-            </Link>
-            <Link to="/products" className={`${
-              isHomePage 
-                ? (scrolled ? 'text-slate-800' : 'text-white') 
-                : 'text-white'
-            } hover:text-amber-200 transition-colors`}>
-              Products
-            </Link>
-            <Link to="/about" className={`${
-              isHomePage 
-                ? (scrolled ? 'text-slate-800' : 'text-white') 
-                : 'text-white'
-            } hover:text-amber-200 transition-colors`}>
-=======
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors duration-200">
               Home
@@ -105,7 +44,6 @@ const Header = ({ onSearch }: HeaderProps) => {
               Products
             </Link>
             <Link to="/about" className="text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors duration-200">
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
               About
             </Link>
           </nav>
@@ -175,45 +113,21 @@ const Header = ({ onSearch }: HeaderProps) => {
             <nav className="space-y-4">
               <Link
                 to="/"
-<<<<<<< HEAD
-                className={`block ${
-                  isHomePage 
-                    ? (scrolled ? 'text-slate-800' : 'text-white') 
-                    : 'text-white'
-                } hover:text-amber-200 transition-colors`}
-=======
                 className="block text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors duration-200"
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link
                 to="/products"
-<<<<<<< HEAD
-                className={`block ${
-                  isHomePage 
-                    ? (scrolled ? 'text-slate-800' : 'text-white') 
-                    : 'text-white'
-                } hover:text-amber-200 transition-colors`}
-=======
                 className="block text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors duration-200"
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
               </Link>
               <Link
                 to="/about"
-<<<<<<< HEAD
-                className={`block ${
-                  isHomePage 
-                    ? (scrolled ? 'text-slate-800' : 'text-white') 
-                    : 'text-white'
-                } hover:text-amber-200 transition-colors`}
-=======
                 className="block text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400 font-medium transition-colors duration-200"
->>>>>>> 75579860cae2b79f281be2a1a57947e28603925c
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
