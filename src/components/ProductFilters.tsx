@@ -23,7 +23,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
     { value: 'shelves', label: 'Shelves' }
   ];
 
-  const handleFilterChange = (key: keyof Filters, value: any) => {
+  const handleFilterChange = (key: keyof Filters, value: string | number | boolean) => {
     onFiltersChange({ ...filters, [key]: value });
   };
 
@@ -145,25 +145,27 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
         </div>
       </div>
 
-      <style jsx>{`
-        .slider::-webkit-slider-thumb {
-          appearance: none;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #d97706;
-          cursor: pointer;
-        }
-        
-        .slider::-moz-range-thumb {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background: #d97706;
-          cursor: pointer;
-          border: none;
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d97706;
+            cursor: pointer;
+          }
+          
+          .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d97706;
+            cursor: pointer;
+            border: none;
+          }
+        `
+      }} />
     </>
   );
 };

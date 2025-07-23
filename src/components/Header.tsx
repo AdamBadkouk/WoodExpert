@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, ShoppingCart, Menu, X, Heart, Moon, Sun } from 'lucide-react';
+import { Search, Menu, X, Heart, Moon, Sun } from 'lucide-react';
 import { useWishlist } from '../contexts/WishlistContext';
 import { useDarkMode } from '../contexts/DarkModeContext';
 

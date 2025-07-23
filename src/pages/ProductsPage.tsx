@@ -30,7 +30,7 @@ const ProductsPage = ({ searchQuery = '' }: ProductsPageProps) => {
   });
 
   const filteredAndSortedProducts = useMemo(() => {
-    let filtered = productsData.filter(product => {
+    const filtered = productsData.filter(product => {
       // Search filter
       if (searchQuery && !product.name.toLowerCase().includes(searchQuery.toLowerCase())) {
         return false;
