@@ -33,7 +33,7 @@ const HomePage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      {/* Hero Section */}
+      {/* Hero Section aaaaaa*/}
       <section className="relative h-screen bg-gradient-to-r from-amber-800 to-amber-600 dark:from-gray-800 dark:to-gray-700 text-white">
         <img 
           src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
