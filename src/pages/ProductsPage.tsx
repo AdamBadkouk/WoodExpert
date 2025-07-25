@@ -1,3 +1,4 @@
+// ProductsPage component for browsing and filtering products
 import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';

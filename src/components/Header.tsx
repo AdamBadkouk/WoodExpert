@@ -1,3 +1,4 @@
+// Header component with navigation, search, and dark mode toggle functionality
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Menu, X, Moon, Sun } from 'lucide-react';

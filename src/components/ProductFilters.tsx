@@ -1,5 +1,6 @@
+// ProductFilters component for filtering products by category and price
 import React from 'react';
-import { Filter, X } from 'lucide-react';
+import { Filter } from 'lucide-react';
 
 interface Filters {
   category: string;

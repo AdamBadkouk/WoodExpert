@@ -1,3 +1,4 @@
+// Main App component with routing and layout structure
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { DarkModeProvider } from './contexts/DarkModeContext';

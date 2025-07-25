@@ -1,3 +1,4 @@
+// ProductCard component for displaying individual product information
 import React from 'react';
 import { Link } from 'react-router-dom';
 
