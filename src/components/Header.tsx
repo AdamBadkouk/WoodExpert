@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, Heart, Moon, Sun } from 'lucide-react';
-import { useWishlist } from '../contexts/WishlistContext';
+import { Search, Menu, X, Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 
 interface HeaderProps {
@@ -12,7 +11,6 @@ const Header = ({ onSearch }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [scrolled, setScrolled] = useState(false);
-  const { state: wishlistState } = useWishlist();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const navigate = useNavigate();
   const location = useLocation();
@@ -50,8 +48,8 @@ const Header = ({ onSearch }: HeaderProps) => {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled || !isHomePage
-          ? 'bg-white bg-opacity-95 shadow-md py-2 dark:bg-gray-900 dark:bg-opacity-95'
+        scrolled
+          ? 'bg-white bg-opacity-70 shadow-md py-2 dark:bg-gray-900 dark:bg-opacity-70 backdrop-blur-sm'
           : 'bg-transparent py-4'
       }`}
     >
@@ -59,15 +57,17 @@ const Header = ({ onSearch }: HeaderProps) => {
         <div className="flex items-center justify-between h-12">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="w-10 h-10 bg-amber-800 dark:bg-amber-700 rounded-lg flex items-center justify-center mr-3 transition-colors duration-300">
-              <span className="text-white font-bold text-lg">WE</span>
-            </div>
+            <img 
+              src="/pics/logo1.png" 
+              alt="woodexpert Logo" 
+              className="w-16 h-16 mr-3 transition-all duration-300"
+            />
             <h1 className={`text-2xl font-bold transition-colors duration-300 ${
               scrolled || !isHomePage
                 ? 'text-amber-800 dark:text-amber-200'
                 : 'text-white drop-shadow-lg'
             }`}>
-              WoodExpert
+              woodexpert
             </h1>
           </Link>
 
@@ -92,28 +92,15 @@ const Header = ({ onSearch }: HeaderProps) => {
                 ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
                 : 'text-white hover:text-amber-200 drop-shadow'
             }`}>
-              About
+              Contact
             </Link>
           </nav>
 
-          {/* Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-md mx-8">
-            <form onSubmit={handleSearch} className="w-full">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-700 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-                />
-                <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-              </div>
-            </form>
-          </div>
+
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
+
             <button
               onClick={toggleDarkMode}
               className={`p-2 transition-colors duration-200 ${
@@ -124,22 +111,6 @@ const Header = ({ onSearch }: HeaderProps) => {
             >
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </button>
-
-            <Link
-              to="/wishlist"
-              className={`relative p-2 transition-colors duration-200 ${
-                scrolled || !isHomePage
-                  ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                  : 'text-white hover:text-amber-200 drop-shadow'
-              }`}
-            >
-              <Heart className="h-6 w-6" />
-              {wishlistState.items.length > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {wishlistState.items.length}
-                </span>
-              )}
-            </Link>
 
             {/* Mobile menu button */}
             <button
@@ -206,7 +177,7 @@ const Header = ({ onSearch }: HeaderProps) => {
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                About
+                Contact
               </Link>
             </nav>
           </div>

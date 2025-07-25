@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Heart, Check, Truck, Shield, RotateCcw } from 'lucide-react';
-import { useWishlist } from '../contexts/WishlistContext';
+import { ArrowLeft, Check, Truck, Shield, RotateCcw } from 'lucide-react';
 import productsData from '../data/products.json';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
-  
-  const { state: wishlistState, dispatch: wishlistDispatch } = useWishlist();
 
   const product = productsData.find(p => p.id === parseInt(id || '0'));
 
@@ -29,26 +26,9 @@ const ProductDetailPage = () => {
     );
   }
 
-  const isInWishlist = wishlistState.items.some(item => item.id === product.id);
   const discount = product.originalPrice 
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
     : 0;
-
-  const toggleWishlist = () => {
-    if (isInWishlist) {
-      wishlistDispatch({ type: 'REMOVE_FROM_WISHLIST', payload: product.id });
-    } else {
-      wishlistDispatch({
-        type: 'ADD_TO_WISHLIST',
-        payload: {
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.images[0]
-        }
-      });
-    }
-  };
 
   const features = [
     {
@@ -197,17 +177,7 @@ const ProductDetailPage = () => {
                 <span>{product.inStock ? 'Contact to Purchase' : 'Out of Stock'}</span>
               </button>
               
-              <button
-                onClick={toggleWishlist}
-                className={`py-3 px-6 rounded-lg font-semibold transition-all duration-200 flex items-center justify-center space-x-2 ${
-                  isInWishlist
-                    ? 'bg-red-500 hover:bg-red-600 text-white'
-                    : 'border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-red-500 dark:hover:border-red-400 hover:text-red-500 dark:hover:text-red-400'
-                }`}
-              >
-                <Heart className={`h-5 w-5 ${isInWishlist ? 'fill-current' : ''}`} />
-                <span>{isInWishlist ? 'Remove from Wishlist' : 'Add to Wishlist'}</span>
-              </button>
+
             </div>
 
             {/* Features */}

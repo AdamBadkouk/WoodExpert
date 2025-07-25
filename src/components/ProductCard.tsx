@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
-import { useWishlist } from '../contexts/WishlistContext';
 
 interface Product {
   id: number;
@@ -18,27 +16,6 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const { state: wishlistState, dispatch: wishlistDispatch } = useWishlist();
-
-  const isInWishlist = wishlistState.items.some(item => item.id === product.id);
-
-  const toggleWishlist = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (isInWishlist) {
-      wishlistDispatch({ type: 'REMOVE_FROM_WISHLIST', payload: product.id });
-    } else {
-      wishlistDispatch({
-        type: 'ADD_TO_WISHLIST',
-        payload: {
-          id: product.id,
-          name: product.name,
-          price: product.price,
-          image: product.images[0]
-        }
-      });
-    }
-  };
 
   const discount = product.originalPrice 
     ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
@@ -63,16 +40,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
               Out of Stock
             </div>
           )}
-          <button
-            onClick={toggleWishlist}
-            className={`absolute top-2 right-2 p-2 rounded-full transition-all duration-200 ${
-              isInWishlist 
-                ? 'bg-red-500 text-white' 
-                : 'bg-white/80 text-gray-600 hover:bg-red-500 hover:text-white'
-            } ${!product.inStock ? 'right-24' : ''}`}
-          >
-            <Heart className={`h-4 w-4 ${isInWishlist ? 'fill-current' : ''}`} />
-          </button>
+
         </div>
         
         <div className="p-4">
