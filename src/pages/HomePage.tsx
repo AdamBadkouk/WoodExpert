@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Truck, Shield, Leaf, Award } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
