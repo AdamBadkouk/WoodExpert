@@ -1,4 +1,3 @@
-// ProductDetailPage component for displaying detailed product information
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Check, Truck, Shield, RotateCcw } from 'lucide-react';

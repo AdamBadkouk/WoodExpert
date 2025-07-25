@@ -1,7 +1,6 @@
-// HomePage component with hero section, features, and product showcase
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Shield, Truck, Award } from 'lucide-react';
+import { ArrowRight, Truck, Shield, Leaf, Award } from 'lucide-react';
 import ProductCard from '../components/ProductCard';
 import productsData from '../data/products.json';
 

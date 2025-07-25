@@ -1,4 +1,3 @@
-// Footer component with company information and contact details
 import React from 'react';
 import { Facebook, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 

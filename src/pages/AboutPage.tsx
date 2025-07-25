@@ -1,6 +1,5 @@
-// AboutPage component serving as contact page with business information and map
 import React from 'react';
-import { MapPin, Phone, Mail, Instagram, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 const AboutPage = () => {
 

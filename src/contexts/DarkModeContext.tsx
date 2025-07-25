@@ -1,4 +1,3 @@
-// DarkModeContext for managing dark/light theme across the application
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 interface DarkModeContextType {
