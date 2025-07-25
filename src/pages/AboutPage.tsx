@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook } from 'lucide-react';
 
 const AboutPage = () => {
