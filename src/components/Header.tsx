@@ -186,5 +186,4 @@ const Header = ({ onSearch }: HeaderProps) => {
     </header>
   );
 };
-
 export default Header;
