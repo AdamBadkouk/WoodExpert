@@ -29,12 +29,18 @@ const HomePage = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      {/* Hero Section aaaaaa*/}
+      <section className="relative h-screen bg-gradient-to-r from-amber-800 to-amber-600 dark:from-gray-800 dark:to-gray-700 text-white">
+=======
     <div className="min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative h-screen bg-gradient-to-r from-blue-800 to-blue-600 dark:from-gray-800 dark:to-gray-700 text-white">
+>>>>>>> updated
         <img 
-          src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
-          alt="CNC wood products on table background"
+          src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+          alt="Wood crafting workshop background"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/40"></div>
