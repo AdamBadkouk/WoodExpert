@@ -16,10 +16,10 @@ interface ProductFiltersProps {
 
 const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductFiltersProps) => {
   const categories = [
-    { value: '', label: 'All Categories' },
-    { value: 'furniture', label: 'Furniture' },
-    { value: 'desks', label: 'Desks' },
-    { value: 'shelves', label: 'Shelves' }
+    { value: '', label: 'Toutes les catégories' },
+    { value: 'mobilier', label: 'Mobilier' },
+    { value: 'bureaux', label: 'Bureaux' },
+    { value: 'étagères', label: 'Étagères' }
   ];
 
   const handleFilterChange = (key: keyof Filters, value: string | number | boolean) => {
@@ -46,9 +46,9 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
           className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
         >
           <Filter className="h-4 w-4" />
-          <span>Filters</span>
+          <span>Filtres</span>
           {hasActiveFilters && (
-            <span className="bg-amber-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+            <span className="bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
               {[filters.category !== '', filters.minPrice > 0, filters.maxPrice < 2000, filters.inStockOnly].filter(Boolean).length}
             </span>
           )}
@@ -58,14 +58,14 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
       {/* Filter Panel */}
       <div className={`${isOpen ? 'block' : 'hidden'} lg:block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-300`}>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filters</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filtres</h2>
           <div className="flex items-center space-x-2">
             {hasActiveFilters && (
               <button
                 onClick={clearFilters}
-                className="text-sm text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition-colors duration-200"
+                className="text-sm text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200"
               >
-                Clear All
+                Tout effacer
               </button>
             )}
             <button
@@ -81,12 +81,12 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
           {/* Category Filter */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Category
+              Catégorie
             </label>
             <select
               value={filters.category}
               onChange={(e) => handleFilterChange('category', e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-700 dark:text-white transition-colors duration-300"
+              className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-colors duration-300"
             >
               {categories.map(category => (
                 <option key={category.value} value={category.value}>
@@ -99,11 +99,11 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
           {/* Price Range */}
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              Price Range: ${filters.minPrice} - ${filters.maxPrice}
+              Gamme de prix: ${filters.minPrice} - ${filters.maxPrice}
             </label>
             <div className="space-y-3">
               <div>
-                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Min Price</label>
+                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Prix minimum</label>
                 <input
                   type="range"
                   min="0"
@@ -115,7 +115,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
                 />
               </div>
               <div>
-                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Max Price</label>
+                <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">Prix maximum</label>
                 <input
                   type="range"
                   min="0"
@@ -136,9 +136,9 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
                 type="checkbox"
                 checked={filters.inStockOnly}
                 onChange={(e) => handleFilterChange('inStockOnly', e.target.checked)}
-                className="rounded border-gray-300 dark:border-gray-600 text-amber-600 focus:ring-amber-500 dark:bg-gray-700"
+                className="rounded border-gray-300 dark:border-gray-600 text-blue-600 focus:ring-blue-500 dark:bg-gray-700"
               />
-              <span className="text-sm text-gray-700 dark:text-gray-300">In Stock Only</span>
+              <span className="text-sm text-gray-700 dark:text-gray-300">En stock seulement</span>
             </label>
           </div>
         </div>
@@ -151,7 +151,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: #d97706;
+            background: #2563eb;
             cursor: pointer;
           }
           
@@ -159,7 +159,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: #d97706;
+            background: #2563eb;
             cursor: pointer;
             border: none;
           }

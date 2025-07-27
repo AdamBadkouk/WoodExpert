@@ -41,7 +41,7 @@ export const DarkModeProvider = ({ children }: { children: React.ReactNode }) =>
 export const useDarkMode = () => {
   const context = useContext(DarkModeContext);
   if (!context) {
-    throw new Error('useDarkMode must be used within DarkModeProvider');
+    throw new Error('useDarkMode doit être utilisé dans DarkModeProvider');
   }
   return context;
 };

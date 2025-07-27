@@ -72,22 +72,22 @@ const ProductsPage = ({ searchQuery = '' }: ProductsPageProps) => {
   }, [searchQuery, filters, sortBy]);
 
   const sortOptions = [
-    { value: 'name', label: 'Name A-Z' },
-    { value: 'price-low', label: 'Price: Low to High' },
-    { value: 'price-high', label: 'Price: High to Low' }
+    { value: 'name', label: 'Nom A-Z' },
+    { value: 'price-low', label: 'Prix: Bas à Élevé' },
+    { value: 'price-high', label: 'Prix: Élevé à Bas' }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-24">
         {/* Header */}
         {searchQuery && (
           <div className="mb-8">
             <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Search Results for "{searchQuery}"
+              Résultats de recherche pour "{searchQuery}"
             </h1>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              {filteredAndSortedProducts.length} product{filteredAndSortedProducts.length !== 1 ? 's' : ''} found
+              {filteredAndSortedProducts.length} produit{filteredAndSortedProducts.length !== 1 ? 's' : ''} trouvé{filteredAndSortedProducts.length !== 1 ? 's' : ''}
             </p>
           </div>
         )}
@@ -108,16 +108,16 @@ const ProductsPage = ({ searchQuery = '' }: ProductsPageProps) => {
             {/* Sort Controls */}
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
               <p className="text-gray-600 dark:text-gray-300">
-                Showing {filteredAndSortedProducts.length} of {productsData.length} products
+                Affichage de {filteredAndSortedProducts.length} sur {productsData.length} produits
               </p>
               <div className="flex items-center space-x-2">
                 <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                  Sort by:
+                  Trier par:
                 </label>
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-700 dark:text-white transition-colors duration-300"
+                  className="px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-colors duration-300"
                 >
                   {sortOptions.map(option => (
                     <option key={option.value} value={option.value}>
@@ -143,10 +143,10 @@ const ProductsPage = ({ searchQuery = '' }: ProductsPageProps) => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-medium text-gray-900 dark:text-white mb-2">
-                  No products found
+                  Aucun produit trouvé
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-6">
-                  Try adjusting your filters or search terms to find what you're looking for.
+                  Essayez d'ajuster vos filtres ou termes de recherche pour trouver ce que vous cherchez.
                 </p>
                 <button
                   onClick={() => {
@@ -157,9 +157,9 @@ const ProductsPage = ({ searchQuery = '' }: ProductsPageProps) => {
                       inStockOnly: false
                     });
                   }}
-                  className="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors duration-200"
+                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200"
                 >
-                  Clear Filters
+                  Effacer les filtres
                 </button>
               </div>
             )}

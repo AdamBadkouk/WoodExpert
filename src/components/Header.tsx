@@ -64,7 +64,7 @@ const Header = ({ onSearch }: HeaderProps) => {
             />
             <h1 className={`text-2xl font-bold transition-colors duration-300 ${
               scrolled || !isHomePage
-                ? 'text-amber-800 dark:text-amber-200'
+                ? 'text-blue-800 dark:text-blue-200'
                 : 'text-white drop-shadow-lg'
             }`}>
               woodexpert
@@ -75,22 +75,22 @@ const Header = ({ onSearch }: HeaderProps) => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className={`font-medium transition-colors duration-200 ${
               scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                : 'text-white hover:text-amber-200 drop-shadow'
+                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200 drop-shadow'
             }`}>
-              Home
+              Accueil
             </Link>
             <Link to="/products" className={`font-medium transition-colors duration-200 ${
               scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                : 'text-white hover:text-amber-200 drop-shadow'
+                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200 drop-shadow'
             }`}>
-              Products
+              Produits
             </Link>
             <Link to="/about" className={`font-medium transition-colors duration-200 ${
               scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                : 'text-white hover:text-amber-200 drop-shadow'
+                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200 drop-shadow'
             }`}>
               Contact
             </Link>
@@ -105,8 +105,8 @@ const Header = ({ onSearch }: HeaderProps) => {
               onClick={toggleDarkMode}
               className={`p-2 transition-colors duration-200 ${
                 scrolled || !isHomePage
-                  ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                  : 'text-white hover:text-amber-200 drop-shadow'
+                  ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200 drop-shadow'
               }`}
             >
               {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -117,8 +117,8 @@ const Header = ({ onSearch }: HeaderProps) => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`md:hidden p-2 transition-colors duration-200 ${
                 scrolled || !isHomePage
-                  ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                  : 'text-white hover:text-amber-200 drop-shadow'
+                  ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200 drop-shadow'
               }`}
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -139,8 +139,8 @@ const Header = ({ onSearch }: HeaderProps) => {
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 dark:bg-gray-800 dark:text-white transition-colors duration-300"
+                  placeholder="Rechercher des produits..."
+                  className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300"
                 />
                 <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
               </div>
@@ -150,30 +150,30 @@ const Header = ({ onSearch }: HeaderProps) => {
                 to="/"
                 className={`block font-medium transition-colors duration-200 ${
                   scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                Accueil
               </Link>
               <Link
                 to="/products"
                 className={`block font-medium transition-colors duration-200 ${
                   scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Products
+                Produits
               </Link>
               <Link
                 to="/about"
                 className={`block font-medium transition-colors duration-200 ${
                   scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-amber-600 dark:hover:text-amber-400'
-                    : 'text-white hover:text-amber-200'
+                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                : 'text-white hover:text-blue-200'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >
