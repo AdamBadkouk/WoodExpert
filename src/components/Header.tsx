@@ -64,8 +64,8 @@ const Header = ({ onSearch }: HeaderProps) => {
             
 
             
-            {/* Desktop Navigation Links - hidden on mobile */}
-            <div className="hidden md:flex items-center">
+            {/* Desktop Navigation Links - slightly right of center */}
+            <div className="hidden md:flex items-center absolute left-1/2 transform -translate-x-1/2 ml-8">
               <nav className="flex items-center space-x-6">
                 <Link
                   to="/"

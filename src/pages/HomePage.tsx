@@ -108,7 +108,7 @@ const HomePage = () => {
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 group cursor-pointer px-4">
               <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent drop-shadow-lg transition-all duration-500 group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300 group-hover:scale-105 group-hover:-rotate-1">
-                À Propos de WoodExpert
+                À Propos de Nous
               </span>
             </h2>
           </div>
