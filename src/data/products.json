@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Oak Executive Desk",
-    "category": "desks",
+    "name": "Bureau Exécutif en Chêne",
+    "category": "bureaux",
     "price": 899,
     "originalPrice": 1099,
-    "description": "Handcrafted solid oak executive desk with built-in storage drawers and cable management. Perfect for professional home offices.",
+    "description": "Bureau exécutif en chêne massif fait à la main avec tiroirs de rangement intégrés et gestion des câbles. Parfait pour les bureaux à domicile professionnels.",
     "images": [
       "https://images.pexels.com/photos/6585751/pexels-photo-6585751.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/4050288/pexels-photo-4050288.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -13,18 +13,18 @@
     "inStock": true,
     "featured": true,
     "specs": {
-      "material": "Solid Oak",
-      "dimensions": "60\" W x 30\" D x 30\" H",
-      "finish": "Natural Oil"
+      "material": "Chêne Massif",
+      "dimensions": "60\" L x 30\" P x 30\" H",
+      "finish": "Huile Naturelle"
     }
   },
   {
     "id": 2,
-    "name": "Rustic Pine Bookshelf",
-    "category": "shelves",
+    "name": "Bibliothèque Rustique en Pin",
+    "category": "étagères",
     "price": 349,
     "originalPrice": 449,
-    "description": "Beautiful 5-tier pine bookshelf with rustic finish. Adjustable shelves accommodate books of all sizes.",
+    "description": "Belle bibliothèque en pin à 5 niveaux avec finition rustique. Les étagères ajustables accueillent des livres de toutes tailles.",
     "images": [
       "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -32,18 +32,18 @@
     "inStock": true,
     "featured": true,
     "specs": {
-      "material": "Pine Wood",
-      "dimensions": "36\" W x 14\" D x 72\" H",
-      "finish": "Rustic Stain"
+      "material": "Bois de Pin",
+      "dimensions": "36\" L x 14\" P x 72\" H",
+      "finish": "Teinture Rustique"
     }
   },
   {
     "id": 3,
-    "name": "Walnut Dining Table",
-    "category": "furniture",
+    "name": "Table à Manger en Noyer",
+    "category": "mobilier",
     "price": 1299,
     "originalPrice": 1599,
-    "description": "Elegant walnut dining table seats 6-8 people comfortably. Features a rich grain pattern and smooth finish.",
+    "description": "Élégante table à manger en noyer qui accueille confortablement 6 à 8 personnes. Présente un motif de grain riche et une finition lisse.",
     "images": [
       "https://images.pexels.com/photos/1248860/pexels-photo-1248860.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -51,18 +51,18 @@
     "inStock": true,
     "featured": false,
     "specs": {
-      "material": "Black Walnut",
-      "dimensions": "84\" W x 42\" D x 30\" H",
-      "finish": "Satin Polyurethane"
+      "material": "Noyer Noir",
+      "dimensions": "84\" L x 42\" P x 30\" H",
+      "finish": "Polyuréthane Satiné"
     }
   },
   {
     "id": 4,
-    "name": "Modern Maple Nightstand",
-    "category": "furniture",
+    "name": "Table de Chevet Moderne en Érable",
+    "category": "mobilier",
     "price": 249,
     "originalPrice": 299,
-    "description": "Sleek maple nightstand with two drawers and clean lines. Perfect for modern bedroom decor.",
+    "description": "Table de chevet élégante en érable avec deux tiroirs et des lignes épurées. Parfaite pour la décoration de chambre moderne.",
     "images": [
       "https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -70,18 +70,18 @@
     "inStock": false,
     "featured": false,
     "specs": {
-      "material": "Maple Wood",
-      "dimensions": "24\" W x 16\" D x 26\" H",
-      "finish": "Clear Lacquer"
+      "material": "Bois d'Érable",
+      "dimensions": "24\" L x 16\" P x 26\" H",
+      "finish": "Laque Transparente"
     }
   },
   {
     "id": 5,
-    "name": "Cedar Storage Bench",
-    "category": "furniture",
+    "name": "Banc de Rangement en Cèdre",
+    "category": "mobilier",
     "price": 179,
     "originalPrice": 229,
-    "description": "Aromatic cedar storage bench perfect for entryways. Natural moth-repelling properties.",
+    "description": "Banc de rangement en cèdre aromatique parfait pour les entrées. Propriétés naturelles anti-mites.",
     "images": [
       "https://images.pexels.com/photos/1571471/pexels-photo-1571471.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/4050318/pexels-photo-4050318.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -89,18 +89,18 @@
     "inStock": true,
     "featured": true,
     "specs": {
-      "material": "Cedar Wood",
-      "dimensions": "48\" W x 18\" D x 18\" H",
-      "finish": "Natural"
+      "material": "Bois de Cèdre",
+      "dimensions": "48\" L x 18\" P x 18\" H",
+      "finish": "Naturel"
     }
   },
   {
     "id": 6,
-    "name": "Bamboo Standing Desk",
-    "category": "desks",
+    "name": "Bureau Debout en Bambou",
+    "category": "bureaux",
     "price": 549,
     "originalPrice": 649,
-    "description": "Eco-friendly bamboo standing desk with adjustable height mechanism. Promotes healthy working habits.",
+    "description": "Bureau debout en bambou écologique avec mécanisme de hauteur ajustable. Favorise des habitudes de travail saines.",
     "images": [
       "https://images.pexels.com/photos/6585751/pexels-photo-6585751.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/4099355/pexels-photo-4099355.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -108,18 +108,18 @@
     "inStock": true,
     "featured": false,
     "specs": {
-      "material": "Bamboo",
-      "dimensions": "48\" W x 24\" D x 28-46\" H",
-      "finish": "Natural Bamboo"
+      "material": "Bambou",
+      "dimensions": "48\" L x 24\" P x 28-46\" H",
+      "finish": "Bambou Naturel"
     }
   },
   {
     "id": 7,
-    "name": "Floating Wall Shelves Set",
-    "category": "shelves",
+    "name": "Ensemble d'Étagères Murales Flottantes",
+    "category": "étagères",
     "price": 89,
     "originalPrice": 119,
-    "description": "Set of 3 floating wall shelves in various sizes. Perfect for displaying books, decor, and plants.",
+    "description": "Ensemble de 3 étagères murales flottantes de différentes tailles. Parfait pour exposer livres, décoration et plantes.",
     "images": [
       "https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -127,18 +127,18 @@
     "inStock": true,
     "featured": false,
     "specs": {
-      "material": "Oak Veneer",
-      "dimensions": "36\", 28\", 20\" lengths",
-      "finish": "Honey Oak"
+      "material": "Placage de Chêne",
+      "dimensions": "Longueurs 36\", 28\", 20\"",
+      "finish": "Chêne Miel"
     }
   },
   {
     "id": 8,
-    "name": "Reclaimed Wood Coffee Table",
-    "category": "furniture",
+    "name": "Table Basse en Bois Récupéré",
+    "category": "mobilier",
     "price": 449,
     "originalPrice": 549,
-    "description": "Unique coffee table made from reclaimed barn wood. Each piece tells its own story with distinctive character marks.",
+    "description": "Table basse unique fabriquée à partir de bois de grange récupéré. Chaque pièce raconte sa propre histoire avec des marques de caractère distinctives.",
     "images": [
       "https://images.pexels.com/photos/1248860/pexels-photo-1248860.jpeg?auto=compress&cs=tinysrgb&w=800",
       "https://images.pexels.com/photos/1571467/pexels-photo-1571467.jpeg?auto=compress&cs=tinysrgb&w=800"
@@ -146,9 +146,9 @@
     "inStock": true,
     "featured": false,
     "specs": {
-      "material": "Reclaimed Wood",
-      "dimensions": "48\" W x 24\" D x 18\" H",
-      "finish": "Weathered Natural"
+      "material": "Bois Récupéré",
+      "dimensions": "48\" L x 24\" P x 18\" H",
+      "finish": "Naturel Vieilli"
     }
   }
 ]

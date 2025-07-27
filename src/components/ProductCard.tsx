@@ -36,20 +36,20 @@ const ProductCard = ({ product }: ProductCardProps) => {
           )}
           {!product.inStock && (
             <div className="absolute top-2 right-2 bg-gray-500 text-white px-2 py-1 rounded-md text-sm font-medium">
-              Out of Stock
+              Rupture de stock
             </div>
           )}
 
         </div>
         
         <div className="p-4">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors duration-200">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
             {product.name}
           </h3>
           
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center space-x-2">
-              <span className="text-xl font-bold text-amber-600 dark:text-amber-400">
+              <span className="text-xl font-bold text-blue-600 dark:text-blue-400">
                 ${product.price}
               </span>
               {product.originalPrice && (
@@ -68,17 +68,17 @@ const ProductCard = ({ product }: ProductCardProps) => {
               e.preventDefault();
               e.stopPropagation();
               if (product.inStock) {
-                alert('Product details available on product page');
+                alert('Détails du produit disponibles sur la page produit');
               }
             }}
             disabled={!product.inStock}
             className={`w-full py-2 px-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center space-x-2 ${
               product.inStock
-                ? 'bg-amber-600 hover:bg-amber-700 text-white hover:shadow-lg'
+                ? 'bg-blue-600 hover:bg-blue-700 text-white hover:shadow-lg'
                 : 'bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 cursor-not-allowed'
             }`}
           >
-            <span>{product.inStock ? 'View Details' : 'Out of Stock'}</span>
+            <span>{product.inStock ? 'Voir les détails' : 'Rupture de stock'}</span>
           </button>
         </div>
       </div>
