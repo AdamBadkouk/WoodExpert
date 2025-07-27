@@ -5,6 +5,18 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: {
+          50: '#ffffff',
+          100: '#f8fafc',
+          200: '#f1f5f9',
+          300: '#e2e8f0',
+          400: '#cbd5e1',
+          500: '#94a3b8',
+          600: '#64748b',
+          700: '#475569',
+          800: '#334155',
+          900: '#1e293b',
+        },
         blue: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -19,6 +31,7 @@ export default {
         },
         custom: {
           bg: '#f9fafb',
+          'dark-bg': '#0f172a', // Single dark mode background color
         },
       },
       fontFamily: {

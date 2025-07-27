@@ -49,7 +49,7 @@ const ProductDetailPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300 slide-in-top">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
         <button
@@ -127,7 +127,7 @@ const ProductDetailPage = () => {
             </div>
 
             {/* Product Specifications */}
-            <div className="bg-custom-bg dark:bg-gray-900 rounded-lg p-6 mb-6 transition-colors duration-300">
+            <div className="bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 rounded-lg p-6 mb-6 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Spécifications</h3>
               <div className="space-y-3">
                 <div className="flex justify-between">
@@ -183,7 +183,7 @@ const ProductDetailPage = () => {
             {/* Features */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {features.map((feature, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-custom-bg dark:bg-gray-900 rounded-lg transition-colors duration-300">
+                <div key={index} className="flex items-center space-x-3 p-4 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 rounded-lg hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300">
                   <div className="text-blue-600 dark:text-blue-400">
                     {feature.icon}
                   </div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, Moon, Sun } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 
 interface HeaderProps {
@@ -9,181 +9,146 @@ interface HeaderProps {
 
 const Header = ({ onSearch }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
-  const navigate = useNavigate();
   const location = useLocation();
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.mobile-menu') && !target.closest('.menu-button')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+      return () => document.removeEventListener('click', handleClickOutside);
+    }
+  }, [isMenuOpen]);
 
   // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
 
-  const isHomePage = location.pathname === '/';
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    onSearch(searchQuery);
-    navigate('/products');
-  };
 
   return (
-    <header
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-white bg-opacity-70 shadow-md py-2 dark:bg-gray-900 dark:bg-opacity-70 backdrop-blur-sm'
-          : 'bg-transparent py-4'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-12">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/pics/logo1.png" 
-              alt="woodexpert Logo" 
-              className="w-16 h-16 mr-3 transition-all duration-300"
-            />
-            <h1 className={`text-2xl font-bold transition-colors duration-300 ${
-              scrolled || !isHomePage
-                ? 'text-blue-800 dark:text-blue-200'
-                : 'text-white drop-shadow-lg'
-            }`}>
-              woodexpert
-            </h1>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className={`font-medium transition-colors duration-200 ${
-              scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200 drop-shadow'
-            }`}>
-              Accueil
+    <>
+      {/* Floating Dock with Logo - Always visible */}
+      <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+        <nav className="flex items-center justify-between bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-0 border border-white/20 dark:border-gray-700/20 shadow-2xl w-[320px] md:w-[600px] hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
+          {/* Left side - Logo and Desktop Navigation */}
+          <div className="flex items-center">
+            {/* Logo */}
+            <Link to="/" className="flex items-center group py-0 transition-all duration-300 mr-4">
+              <img 
+                src="/pics/logo1.png" 
+                alt="woodexpert Logo" 
+                className="w-12 h-12 md:w-16 md:h-16 mr-1 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+              />
+              <span className="text-sm md:text-lg font-bold bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300">
+                WoodExpert
+              </span>
             </Link>
-            <Link to="/products" className={`font-medium transition-colors duration-200 ${
-              scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200 drop-shadow'
-            }`}>
-              Produits
-            </Link>
-            <Link to="/about" className={`font-medium transition-colors duration-200 ${
-              scrolled || !isHomePage
-                ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200 drop-shadow'
-            }`}>
-              Contact
-            </Link>
-          </nav>
+            
 
-
-
-          {/* Actions */}
-          <div className="flex items-center space-x-4">
-
-            <button
-              onClick={toggleDarkMode}
-              className={`p-2 transition-colors duration-200 ${
-                scrolled || !isHomePage
-                  ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200 drop-shadow'
-              }`}
-            >
-              {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </button>
-
-            {/* Mobile menu button */}
+            
+            {/* Desktop Navigation Links - hidden on mobile */}
+            <div className="hidden md:flex items-center">
+              <nav className="flex items-center space-x-6">
+                <Link
+                  to="/"
+                  className="font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group"
+                >
+                  Accueil
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                </Link>
+                <Link
+                  to="/products"
+                  className="font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group"
+                >
+                  Produits
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                </Link>
+                <Link
+                  to="/about"
+                  className="font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group"
+                >
+                  Contact
+                  <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+                </Link>
+              </nav>
+            </div>
+          </div>
+           
+          {/* Right side controls - hamburger menu and dark mode toggle */}
+          <div className="flex items-center space-x-2">
+            {/* Hamburger Menu Button - visible only on mobile */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`md:hidden p-2 transition-colors duration-200 ${
-                scrolled || !isHomePage
-                  ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200 drop-shadow'
-              }`}
+              className="menu-button md:hidden p-2 transition-all duration-300 hover:scale-110 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100"
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMenuOpen ? <X className="h-4 w-4 md:h-5 md:w-5 pointer-events-none" /> : <Menu className="h-4 w-4 md:h-5 md:w-5 pointer-events-none" />}
+            </button>
+            
+            {/* Dark mode toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 transition-all duration-300 hover:scale-110 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100"
+              aria-label="Toggle dark mode"
+            >
+              {isDarkMode ? <Sun className="h-4 w-4 md:h-5 md:w-5" /> : <Moon className="h-4 w-4 md:h-5 md:w-5" />}
             </button>
           </div>
-        </div>
+        </nav>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className={`md:hidden py-4 border-t transition-colors duration-300 ${
-            scrolled || !isHomePage
-              ? 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900'
-              : 'border-white/20 bg-black/80 backdrop-blur-md'
-          }`}>
-            <form onSubmit={handleSearch} className="mb-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Rechercher des produits..."
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white transition-colors duration-300"
-                />
-                <Search className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-              </div>
-            </form>
-            <nav className="space-y-4">
+      {/* Mobile Menu Dropdown - only visible on mobile */}
+      {isMenuOpen && (
+        <div className="mobile-menu block md:hidden fixed top-20 left-1/2 transform -translate-x-1/2 z-40 w-[280px]">
+          <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl border border-white/20 dark:border-gray-700/20 shadow-2xl py-4 px-6 hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
+            <nav className="space-y-3">
               <Link
-                to="/"
-                className={`block font-medium transition-colors duration-200 ${
-                  scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Accueil
-              </Link>
-              <Link
-                to="/products"
-                className={`block font-medium transition-colors duration-200 ${
-                  scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Produits
-              </Link>
-              <Link
-                to="/about"
-                className={`block font-medium transition-colors duration-200 ${
-                  scrolled || !isHomePage
-                    ? 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
-                : 'text-white hover:text-blue-200'
-                }`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
+                 to="/"
+                 className="block font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group py-2 px-3 rounded-lg"
+                 onClick={() => setIsMenuOpen(false)}
+               >
+                 Accueil
+                 <span className="absolute left-3 bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-[calc(100%-24px)]"></span>
+               </Link>
+               <Link
+                 to="/products"
+                 className="block font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group py-2 px-3 rounded-lg"
+                 onClick={() => setIsMenuOpen(false)}
+               >
+                 Produits
+                 <span className="absolute left-3 bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-[calc(100%-24px)]"></span>
+               </Link>
+               <Link
+                 to="/about"
+                 className="block font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group py-2 px-3 rounded-lg"
+                 onClick={() => setIsMenuOpen(false)}
+               >
+                 Contact
+                 <span className="absolute left-3 bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-[calc(100%-24px)]"></span>
+               </Link>
             </nav>
           </div>
-        )}
-      </div>
-    </header>
+        </div>
+      )}
+    </>
   );
 };
 export default Header;

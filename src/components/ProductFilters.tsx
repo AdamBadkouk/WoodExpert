@@ -17,9 +17,11 @@ interface ProductFiltersProps {
 const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductFiltersProps) => {
   const categories = [
     { value: '', label: 'Toutes les catégories' },
-    { value: 'mobilier', label: 'Mobilier' },
-    { value: 'bureaux', label: 'Bureaux' },
-    { value: 'étagères', label: 'Étagères' }
+    { value: 'accessoires', label: 'Accessoires' },
+    { value: 'cuisine', label: 'Cuisine' },
+    { value: 'logo', label: 'Logo' },
+    { value: 'plafond', label: 'Plafond' },
+    { value: 'salon', label: 'Salon' }
   ];
 
   const handleFilterChange = (key: keyof Filters, value: string | number | boolean) => {
@@ -43,7 +45,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
       <div className="lg:hidden mb-4">
         <button
           onClick={onToggle}
-          className="flex items-center space-x-2 px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm hover:shadow-md transition-all duration-200"
+          className="flex items-center space-x-2 px-4 py-2 bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 rounded-lg shadow-sm hover:shadow-md hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300"
         >
           <Filter className="h-4 w-4" />
           <span>Filtres</span>
@@ -56,7 +58,7 @@ const ProductFilters = ({ filters, onFiltersChange, isOpen, onToggle }: ProductF
       </div>
 
       {/* Filter Panel */}
-      <div className={`${isOpen ? 'block' : 'hidden'} lg:block bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 transition-colors duration-300`}>
+      <div className={`${isOpen ? 'block' : 'hidden'} lg:block bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 rounded-lg shadow-md p-6 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300`}>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Filtres</h2>
           <div className="flex items-center space-x-2">
