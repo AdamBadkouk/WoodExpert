@@ -3,24 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import { useDarkMode } from '../contexts/DarkModeContext';
 
-interface HeaderProps {
-  onSearch: (query: string) => void;
-}
-
-const Header = ({ onSearch }: HeaderProps) => {
+const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const location = useLocation();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,11 +37,15 @@ const Header = ({ onSearch }: HeaderProps) => {
           {/* Left side - Logo and Desktop Navigation */}
           <div className="flex items-center">
             {/* Logo */}
-            <Link to="/" className="flex items-center group py-0 transition-all duration-300 mr-4">
+            <Link 
+              to="/" 
+              className="flex items-center group py-0 transition-all duration-300 mr-4"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img 
                 src="/pics/logo1.png" 
                 alt="woodexpert Logo" 
-                className="w-12 h-12 md:w-16 md:h-16 mr-1 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                className="w-12 h-12 md:w-16 md:h-16 mr-1"
               />
               <span className="text-sm md:text-lg font-bold bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300">
                 WoodExpert
@@ -78,7 +68,7 @@ const Header = ({ onSearch }: HeaderProps) => {
                   to="/products"
                   className="font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group"
                 >
-                  Produits
+                  Catalog
                   <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
                 </Link>
                 <Link
@@ -133,7 +123,7 @@ const Header = ({ onSearch }: HeaderProps) => {
                  className="block font-medium transition-all duration-300 text-blue-300 dark:text-blue-200 hover:text-blue-500 dark:hover:text-blue-100 relative group py-2 px-3 rounded-lg"
                  onClick={() => setIsMenuOpen(false)}
                >
-                 Produits
+                 Catalog
                  <span className="absolute left-3 bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out group-hover:w-[calc(100%-24px)]"></span>
                </Link>
                <Link

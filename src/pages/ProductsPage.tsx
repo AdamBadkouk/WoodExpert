@@ -2,25 +2,54 @@ import React, { useState } from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const ProductsPage: React.FC = () => {
-  const categories = ['Accessoires', 'Cuisine', 'Logo', 'Plafond', 'Salon'];
+  const categories = ['Designs', 'Logos', 'Plafonds', 'Separations'];
   const [activeCategory, setActiveCategory] = useState(0);
 
-  const accessoryProducts = [
-    { id: 1, name: 'Porte-Clés Artisanal', image: '/pics/acc1.jpg', description: 'Porte-clés en bois massif sculpté à la main' },
-    { id: 2, name: 'Dessous de Verre Élégant', image: '/pics/acc2.jpg', description: 'Set de dessous de verre en bois noble' },
-    { id: 3, name: 'Boîte à Bijoux Raffinée', image: '/pics/acc3.jpg', description: 'Coffret en bois précieux avec compartiments' },
-    { id: 4, name: 'Support Téléphone Design', image: '/pics/acc4.jpg', description: 'Support moderne en bois pour smartphone' },
-    { id: 5, name: 'Vide-Poche Décoratif', image: '/pics/acc5.jpg', description: 'Plateau décoratif en bois sculpté' },
-    { id: 6, name: 'Cadre Photo Naturel', image: '/pics/acc6.jpg', description: 'Cadre photo en bois brut authentique' },
-    { id: 7, name: 'Organisateur Bureau', image: '/pics/acc7.jpg', description: 'Organisateur de bureau en bois fonctionnel' },
-    { id: 8, name: 'Lampe Ambiance Bois', image: '/pics/acc8.jpg', description: 'Lampe d\'ambiance en bois avec éclairage LED' }
+  const separationProducts = [
+    { id: 1, name: 'Séparation Moderne', image: '/pics/sep1.jpg', description: 'Cloison contemporaine élégante' },
+    { id: 2, name: 'Séparation Décorative', image: '/pics/sep2.jpg', description: 'Panneau ornemental raffiné' },
+    { id: 3, name: 'Séparation Minimaliste', image: '/pics/sep3.jpg', description: 'Design épuré et fonctionnel' },
+    { id: 4, name: 'Séparation Artistique', image: '/pics/sep4.jpg', description: 'Création unique sculptée' },
+    { id: 5, name: 'Séparation Élégante', image: '/pics/sep5.jpg', description: 'Style raffiné et sophistiqué' },
+    { id: 6, name: 'Séparation Premium', image: '/pics/sep6.jpg', description: 'Finition haut de gamme' },
+    { id: 8, name: 'Séparation Exclusive', image: '/pics/sep8.jpg', description: 'Design exclusif sur mesure' }
   ];
 
   const plafondProducts = [
     { id: 1, name: 'Plafond Moderne Élégant', image: '/pics/pl1.jpg', description: 'Design contemporain en bois noble pour plafond' },
     { id: 2, name: 'Plafond Classique Raffiné', image: '/pics/pl2.jpg', description: 'Style traditionnel avec finitions artisanales' },
     { id: 3, name: 'Plafond Design Minimaliste', image: '/pics/pl3.jpg', description: 'Lignes épurées pour intérieur moderne' },
-    { id: 4, name: 'Plafond Artistique Sculpté', image: '/pics/pl4.jpg', description: 'Œuvre d\'art fonctionnelle pour votre plafond' }
+    { id: 4, name: 'Plafond Artistique Sculpté', image: '/pics/pl4.jpg', description: 'Œuvre d\'art fonctionnelle pour votre plafond' },
+    { id: 5, name: 'Plafond Luxueux', image: '/pics/pl5.jpg', description: 'Finition haut de gamme' },
+    { id: 6, name: 'Plafond Premium', image: '/pics/pl6.jpg', description: 'Design premium exclusif' },
+    { id: '6-large', name: 'Plafond Premium Large', image: '/pics/pl6 (Large).jpg', description: 'Version grand format du design premium' }
+  ];
+
+  const designProducts = [
+    { id: 1, name: 'Design Moderne Élégant', image: '/pics/des1.jpg', description: 'Design contemporain en bois noble' },
+    { id: '1-1', name: 'Design Moderne Variant', image: '/pics/des1-1.jpg', description: 'Variante du design moderne' },
+    { id: 2, name: 'Design Classique Raffiné', image: '/pics/des2.jpg', description: 'Style traditionnel avec finitions artisanales' },
+    { id: 3, name: 'Design Minimaliste Chic', image: '/pics/des3.jpg', description: 'Lignes épurées pour intérieur moderne' },
+    { id: 4, name: 'Design Artistique Sculpté', image: '/pics/des4.jpg', description: 'Œuvre d\'art fonctionnelle en bois' },
+    { id: 5, name: 'Design Premium Luxe', image: '/pics/des5.jpg', description: 'Design haut de gamme en bois noble' },
+    { id: 6, name: 'Design Créatif Original', image: '/pics/des6.jpg', description: 'Design unique pour se démarquer' },
+    { id: 7, name: 'Design Personnalisé', image: '/pics/des7.jpg', description: 'Design entièrement personnalisé selon vos besoins' },
+    { id: 8, name: 'Design Signature Exclusive', image: '/pics/des8.jpg', description: 'Design signature pour une identité forte' },
+    { id: 9, name: 'Design Innovant Unique', image: '/pics/des9.jpg', description: 'Design révolutionnaire pour projets exceptionnels' },
+    { id: 10, name: 'Design Artistique Premium', image: '/pics/des10.jpg', description: 'Expression créative unique en bois sculpté' },
+    { id: 12, name: 'Design Élégant', image: '/pics/des12.jpg', description: 'Raffinement et sophistication' }
+  ];
+
+  const logoProducts = [
+    { id: 1, name: 'Logo Corporate', image: '/pics/logo1.jpg', description: 'Logo professionnel pour entreprise' },
+    { id: 2, name: 'Logo Design Moderne', image: '/pics/logo2.jpg', description: 'Design contemporain pour votre marque' },
+    { id: 3, name: 'Logo Artistique Sculpté', image: '/pics/logo3.jpg', description: 'Logo sculpté à la main avec finition artisanale' },
+    { id: 4, name: 'Logo Minimaliste Chic', image: '/pics/logo4.jpg', description: 'Design épuré pour une image moderne' },
+    { id: 5, name: 'Logo Traditionnel Raffiné', image: '/pics/logo5.jpg', description: 'Style classique avec gravure profonde' },
+    { id: 6, name: 'Logo Premium Luxe', image: '/pics/logo6.jpg', description: 'Logo haut de gamme en bois noble' },
+    { id: 7, name: 'Logo Créatif Original', image: '/pics/logo7.jpg', description: 'Design unique pour se démarquer' },
+    { id: 8, name: 'Logo Personnalisé Sur-Mesure', image: '/pics/logo8.jpg', description: 'Logo entièrement personnalisé selon vos besoins' },
+    { id: 9, name: 'Logo Signature Exclusive', image: '/pics/logo9.jpg', description: 'Logo signature pour une identité forte' }
   ];
 
 
@@ -28,15 +57,10 @@ const ProductsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300 slide-in-bottom">
       {/* Products Section */}
-      <section className="py-12 sm:py-16 pt-24 sm:pt-32 bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300">
+      <section className="py-12 sm:py-16 pt-20 sm:pt-24 bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 group cursor-pointer px-4">
-              <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent drop-shadow-lg transition-all duration-500 group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300 group-hover:scale-105 group-hover:-rotate-1">
-                Nos Produits
-              </span>
-            </h2>
-
+            {/* Title removed but margin kept */}
           </div>
           
           {/* Category Navigation - Floating Dock Style */}
@@ -66,10 +90,10 @@ const ProductsPage: React.FC = () => {
           </div>
 
           {/* Products Display */}
-          {activeCategory === 0 && ( // Accessoires category
+          {activeCategory === 0 && ( // Designs category
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                {accessoryProducts.map((product) => (
+                {designProducts.map((product) => (
                   <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
                     <div className="aspect-square overflow-hidden">
                       <img 
@@ -108,8 +132,51 @@ const ProductsPage: React.FC = () => {
             </>
           )}
 
-          {/* Plafond category */}
-          {activeCategory === 3 && (
+          {/* Logos category */}
+          {activeCategory === 1 && (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                {logoProducts.map((product) => (
+                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                    <div className="aspect-square overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-4 sm:p-6">
+                       <a
+                        href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                      >
+                        <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                        À propos de ce produit
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Personalized Design Button */}
+              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+                <a
+                  href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                >
+                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                  Pour un design personnalisé contactez-nous
+                </a>
+              </div>
+            </>
+          )}
+
+          {/* Plafonds category */}
+          {activeCategory === 2 && (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
                 {plafondProducts.map((product) => (
@@ -151,8 +218,51 @@ const ProductsPage: React.FC = () => {
             </>
           )}
 
+          {/* Separations category */}
+          {activeCategory === 3 && (
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+                {separationProducts.map((product) => (
+                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                    <div className="aspect-square overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={product.name}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-4 sm:p-6">
+                       <a
+                        href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                      >
+                        <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                        À propos de ce produit
+                      </a>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Personalized Design Button */}
+              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+                <a
+                  href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                >
+                  <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                  Pour un design personnalisé contactez-nous
+                </a>
+              </div>
+            </>
+          )}
+
           {/* Placeholder for other categories */}
-          {activeCategory !== 0 && activeCategory !== 3 && (
+          {activeCategory !== 0 && activeCategory !== 1 && activeCategory !== 2 && activeCategory !== 3 && (
             <div className="text-center py-16">
               <p className="text-gray-600 dark:text-gray-400 text-lg">
                 Produits pour {categories[activeCategory]} - Bientôt disponibles

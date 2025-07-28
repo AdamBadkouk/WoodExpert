@@ -1,4 +1,5 @@
 import { Facebook, Instagram, Mail, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 
@@ -13,18 +14,27 @@ const Footer = () => {
         <div className="text-center">
           {/* Logo and Brand */}
           <div className="flex flex-col items-center mb-6">
-            <div className="group cursor-pointer mb-1">
+            <Link 
+              to="/" 
+              className="mb-1"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img 
                 src="/pics/logo1.png" 
                 alt="woodexpert Logo" 
-                className="w-24 h-24 mx-auto transition-all duration-500 group-hover:scale-110 group-hover:rotate-6 filter drop-shadow-lg"
+                className="w-24 h-24 mx-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
               />
-            </div>
-            <h3 className="text-2xl font-bold mb-2 group cursor-pointer">
-                <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent transition-all duration-500 group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300 group-hover:scale-105">
-                  WoodExpert
-                </span>
-              </h3>
+            </Link>
+            <Link 
+              to="/" 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              <h3 className="text-2xl font-bold mb-2 group cursor-pointer">
+                  <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent transition-all duration-500 group-hover:from-blue-900 group-hover:via-blue-600 group-hover:to-blue-300 group-hover:scale-105">
+                    WoodExpert
+                  </span>
+                </h3>
+            </Link>
               <p className="text-gray-600 dark:text-gray-300 max-w-md mx-auto text-xs leading-relaxed">
                 L'art du bois créé avec passion & précision
               </p>
