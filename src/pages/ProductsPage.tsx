@@ -1,70 +1,79 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const ProductsPage: React.FC = () => {
   const categories = ['Designs', 'Logos', 'Plafonds', 'Separations'];
   const [activeCategory, setActiveCategory] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const separationProducts = [
-    { id: 1, name: 'Séparation Moderne', image: '/pics/sep1.jpg', description: 'Cloison contemporaine élégante' },
-    { id: 2, name: 'Séparation Décorative', image: '/pics/sep2.jpg', description: 'Panneau ornemental raffiné' },
-    { id: 3, name: 'Séparation Minimaliste', image: '/pics/sep3.jpg', description: 'Design épuré et fonctionnel' },
-    { id: 4, name: 'Séparation Artistique', image: '/pics/sep4.jpg', description: 'Création unique sculptée' },
-    { id: 5, name: 'Séparation Élégante', image: '/pics/sep5.jpg', description: 'Style raffiné et sophistiqué' },
-    { id: 6, name: 'Séparation Premium', image: '/pics/sep6.jpg', description: 'Finition haut de gamme' },
-    { id: 8, name: 'Séparation Exclusive', image: '/pics/sep8.jpg', description: 'Design exclusif sur mesure' }
+    { id: 1, name: 'Séparation Moderne', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep1.jpg?raw=true', description: 'Cloison contemporaine élégante' },
+    { id: 2, name: 'Séparation Décorative', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep2.jpg?raw=true', description: 'Panneau ornemental raffiné' },
+    { id: 3, name: 'Séparation Minimaliste', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep3.jpg?raw=true', description: 'Design épuré et fonctionnel' },
+    { id: 4, name: 'Séparation Artistique', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep4.jpg?raw=true', description: 'Création unique sculptée' },
+    { id: 5, name: 'Séparation Élégante', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep5.jpg?raw=true', description: 'Style raffiné et sophistiqué' },
+    { id: 6, name: 'Séparation Premium', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep6.jpg?raw=true', description: 'Finition haut de gamme' },
+    { id: 8, name: 'Séparation Exclusive', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/sep8.jpg?raw=true', description: 'Design exclusif sur mesure' }
   ];
 
   const plafondProducts = [
-    { id: 1, name: 'Plafond Moderne Élégant', image: '/pics/pl1.jpg', description: 'Design contemporain en bois noble pour plafond' },
-    { id: 2, name: 'Plafond Classique Raffiné', image: '/pics/pl2.jpg', description: 'Style traditionnel avec finitions artisanales' },
-    { id: 3, name: 'Plafond Design Minimaliste', image: '/pics/pl3.jpg', description: 'Lignes épurées pour intérieur moderne' },
-    { id: 4, name: 'Plafond Artistique Sculpté', image: '/pics/pl4.jpg', description: 'Œuvre d\'art fonctionnelle pour votre plafond' },
-    { id: 5, name: 'Plafond Luxueux', image: '/pics/pl5.jpg', description: 'Finition haut de gamme' },
-    { id: 6, name: 'Plafond Premium', image: '/pics/pl6.jpg', description: 'Design premium exclusif' },
-    { id: '6-large', name: 'Plafond Premium Large', image: '/pics/pl6 (Large).jpg', description: 'Version grand format du design premium' }
+    { id: 1, name: 'Plafond Moderne Élégant', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl1.jpg?raw=true', description: 'Design contemporain en bois noble pour plafond' },
+    { id: 2, name: 'Plafond Classique Raffiné', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl2.jpg?raw=true', description: 'Style traditionnel avec finitions artisanales' },
+    { id: 3, name: 'Plafond Design Minimaliste', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl3.jpg?raw=true', description: 'Lignes épurées pour intérieur moderne' },
+    { id: 4, name: 'Plafond Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl4.jpg?raw=true', description: 'Œuvre d\'art fonctionnelle pour votre plafond' },
+    { id: 5, name: 'Plafond Luxueux', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl5.jpg?raw=true', description: 'Finition haut de gamme' },
+    { id: 6, name: 'Plafond Premium', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl6.jpg?raw=true', description: 'Design premium exclusif' },
+    { id: '6-large', name: 'Plafond Premium Large', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/pl6%20(Large).jpg?raw=true', description: 'Version grand format du design premium' }
   ];
 
   const designProducts = [
-    { id: 1, name: 'Design Moderne Élégant', image: '/pics/des1.jpg', description: 'Design contemporain en bois noble' },
-    { id: '1-1', name: 'Design Moderne Variant', image: '/pics/des1-1.jpg', description: 'Variante du design moderne' },
-    { id: 2, name: 'Design Classique Raffiné', image: '/pics/des2.jpg', description: 'Style traditionnel avec finitions artisanales' },
-    { id: 3, name: 'Design Minimaliste Chic', image: '/pics/des3.jpg', description: 'Lignes épurées pour intérieur moderne' },
-    { id: 4, name: 'Design Artistique Sculpté', image: '/pics/des4.jpg', description: 'Œuvre d\'art fonctionnelle en bois' },
-    { id: 5, name: 'Design Premium Luxe', image: '/pics/des5.jpg', description: 'Design haut de gamme en bois noble' },
-    { id: 6, name: 'Design Créatif Original', image: '/pics/des6.jpg', description: 'Design unique pour se démarquer' },
-    { id: 7, name: 'Design Personnalisé', image: '/pics/des7.jpg', description: 'Design entièrement personnalisé selon vos besoins' },
-    { id: 8, name: 'Design Signature Exclusive', image: '/pics/des8.jpg', description: 'Design signature pour une identité forte' },
-    { id: 9, name: 'Design Innovant Unique', image: '/pics/des9.jpg', description: 'Design révolutionnaire pour projets exceptionnels' },
-    { id: 10, name: 'Design Artistique Premium', image: '/pics/des10.jpg', description: 'Expression créative unique en bois sculpté' },
-    { id: 12, name: 'Design Élégant', image: '/pics/des12.jpg', description: 'Raffinement et sophistication' }
+    { id: 1, name: 'Design Moderne Élégant', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des1.jpg?raw=true', description: 'Design contemporain en bois noble' },
+    { id: '1-1', name: 'Design Moderne Variant', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des1-1.jpg?raw=true', description: 'Variante du design moderne' },
+    { id: 2, name: 'Design Classique Raffiné', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des2.jpg?raw=true', description: 'Style traditionnel avec finitions artisanales' },
+    { id: 3, name: 'Design Minimaliste Chic', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des3.jpg?raw=true', description: 'Lignes épurées pour intérieur moderne' },
+    { id: 4, name: 'Design Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des4.jpg?raw=true', description: 'Œuvre d\'art fonctionnelle en bois' },
+    { id: 5, name: 'Design Premium Luxe', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des5.jpg?raw=true', description: 'Design haut de gamme en bois noble' },
+    { id: 6, name: 'Design Créatif Original', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des6.jpg?raw=true', description: 'Design unique pour se démarquer' },
+    { id: 7, name: 'Design Personnalisé', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des7.jpg?raw=true', description: 'Design entièrement personnalisé selon vos besoins' },
+    { id: 8, name: 'Design Signature Exclusive', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des8.jpg?raw=true', description: 'Design signature pour une identité forte' },
+    { id: 9, name: 'Design Innovant Unique', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des9.jpg?raw=true', description: 'Design révolutionnaire pour projets exceptionnels' },
+    { id: 10, name: 'Design Artistique Premium', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des10.jpg?raw=true', description: 'Expression créative unique en bois sculpté' },
+    { id: 12, name: 'Design Élégant', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des12.jpg?raw=true', description: 'Raffinement et sophistication' }
   ];
 
   const logoProducts = [
-    { id: 1, name: 'Logo Corporate', image: '/pics/logo1.jpg', description: 'Logo professionnel pour entreprise' },
-    { id: 2, name: 'Logo Design Moderne', image: '/pics/logo2.jpg', description: 'Design contemporain pour votre marque' },
-    { id: 3, name: 'Logo Artistique Sculpté', image: '/pics/logo3.jpg', description: 'Logo sculpté à la main avec finition artisanale' },
-    { id: 4, name: 'Logo Minimaliste Chic', image: '/pics/logo4.jpg', description: 'Design épuré pour une image moderne' },
-    { id: 5, name: 'Logo Traditionnel Raffiné', image: '/pics/logo5.jpg', description: 'Style classique avec gravure profonde' },
-    { id: 6, name: 'Logo Premium Luxe', image: '/pics/logo6.jpg', description: 'Logo haut de gamme en bois noble' },
-    { id: 7, name: 'Logo Créatif Original', image: '/pics/logo7.jpg', description: 'Design unique pour se démarquer' },
-    { id: 8, name: 'Logo Personnalisé Sur-Mesure', image: '/pics/logo8.jpg', description: 'Logo entièrement personnalisé selon vos besoins' },
-    { id: 9, name: 'Logo Signature Exclusive', image: '/pics/logo9.jpg', description: 'Logo signature pour une identité forte' }
+    { id: 1, name: 'Logo Corporate', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo1.jpg?raw=true', description: 'Logo professionnel pour entreprise' },
+    { id: 2, name: 'Logo Design Moderne', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo2.jpg?raw=true', description: 'Design contemporain pour votre marque' },
+    { id: 3, name: 'Logo Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo3.jpg?raw=true', description: 'Logo sculpté à la main avec finition artisanale' },
+    { id: 4, name: 'Logo Minimaliste Chic', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo4.jpg?raw=true', description: 'Design épuré pour une image moderne' },
+    { id: 5, name: 'Logo Traditionnel Raffiné', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo5.jpg?raw=true', description: 'Style classique avec gravure profonde' },
+    { id: 6, name: 'Logo Premium Luxe', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo6.jpg?raw=true', description: 'Logo haut de gamme en bois noble' },
+    { id: 7, name: 'Logo Créatif Original', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo7.jpg?raw=true', description: 'Design unique pour se démarquer' },
+    { id: 8, name: 'Logo Personnalisé Sur-Mesure', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo8.jpg?raw=true', description: 'Logo entièrement personnalisé selon vos besoins' },
+    { id: 9, name: 'Logo Signature Exclusive', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo9.jpg?raw=true', description: 'Logo signature pour une identité forte' }
   ];
 
 
 
   return (
-    <div className="min-h-screen bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300 slide-in-bottom">
+    <div className={`min-h-screen bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300 ${isLoaded ? 'slide-in-bottom' : 'opacity-0'}`}>
       {/* Products Section */}
       <section className="py-12 sm:py-16 pt-20 sm:pt-24 bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-12">
-            {/* Title removed but margin kept */}
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4 ${isLoaded ? 'zoom-in animate-delay-200' : 'opacity-0'}`}>
+              <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
+                Nos Produits
+              </span>
+            </h2>
           </div>
           
           {/* Category Navigation - Floating Dock Style */}
-          <div className="flex justify-center mb-8 sm:mb-12 px-4">
+          <div className={`flex justify-center mb-8 sm:mb-12 px-4 ${isLoaded ? 'zoom-in animate-delay-300' : 'opacity-0'}`}>
             <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-2 border border-white/20 dark:border-gray-700/20 shadow-2xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
               <div className="flex space-x-2 sm:space-x-4 overflow-x-auto scrollbar-hide">
                 {categories.map((category, index) => (
@@ -93,8 +102,8 @@ const ProductsPage: React.FC = () => {
           {activeCategory === 0 && ( // Designs category
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                {designProducts.map((product) => (
-                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                {designProducts.map((product, index) => (
+                  <div key={product.id} className={`glass-card rounded-2xl overflow-hidden ${isLoaded ? 'zoom-in' : 'opacity-0'}`} style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                     <div className="aspect-square overflow-hidden">
                       <img 
                         src={product.image} 
@@ -118,7 +127,7 @@ const ProductsPage: React.FC = () => {
               </div>
               
               {/* Personalized Design Button */}
-              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+              <div className={`flex justify-center mt-8 sm:mt-12 px-4 ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
                 <a
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
@@ -136,8 +145,8 @@ const ProductsPage: React.FC = () => {
           {activeCategory === 1 && (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                {logoProducts.map((product) => (
-                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                {logoProducts.map((product, index) => (
+                  <div key={product.id} className={`glass-card rounded-2xl overflow-hidden ${isLoaded ? 'zoom-in' : 'opacity-0'}`} style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                     <div className="aspect-square overflow-hidden">
                       <img 
                         src={product.image} 
@@ -161,7 +170,7 @@ const ProductsPage: React.FC = () => {
               </div>
               
               {/* Personalized Design Button */}
-              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+              <div className={`flex justify-center mt-8 sm:mt-12 px-4 ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
                 <a
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
@@ -179,8 +188,8 @@ const ProductsPage: React.FC = () => {
           {activeCategory === 2 && (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                {plafondProducts.map((product) => (
-                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                {plafondProducts.map((product, index) => (
+                  <div key={product.id} className={`glass-card rounded-2xl overflow-hidden ${isLoaded ? 'zoom-in' : 'opacity-0'}`} style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                     <div className="aspect-square overflow-hidden">
                       <img 
                         src={product.image} 
@@ -204,7 +213,7 @@ const ProductsPage: React.FC = () => {
               </div>
               
               {/* Personalized Design Button */}
-              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+              <div className={`flex justify-center mt-8 sm:mt-12 px-4 ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
                 <a
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
@@ -222,8 +231,8 @@ const ProductsPage: React.FC = () => {
           {activeCategory === 3 && (
             <>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-                {separationProducts.map((product) => (
-                  <div key={product.id} className="glass-card rounded-2xl overflow-hidden">
+                {separationProducts.map((product, index) => (
+                  <div key={product.id} className={`glass-card rounded-2xl overflow-hidden ${isLoaded ? 'zoom-in' : 'opacity-0'}`} style={{animationDelay: `${0.4 + index * 0.1}s`}}>
                     <div className="aspect-square overflow-hidden">
                       <img 
                         src={product.image} 
@@ -247,7 +256,7 @@ const ProductsPage: React.FC = () => {
               </div>
               
               {/* Personalized Design Button */}
-              <div className="flex justify-center mt-8 sm:mt-12 px-4">
+              <div className={`flex justify-center mt-8 sm:mt-12 px-4 ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
                 <a
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"

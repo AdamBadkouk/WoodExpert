@@ -43,7 +43,7 @@ const Header = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img 
-                src="/pics/logo1.png" 
+                src="https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo1.png?raw=true" 
                 alt="woodexpert Logo" 
                 className="w-12 h-12 md:w-16 md:h-16 mr-1"
               />

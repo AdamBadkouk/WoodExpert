@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Check, Truck, Shield, RotateCcw } from 'lucide-react';
 import productsData from '../data/products.json';
@@ -7,6 +7,11 @@ const ProductDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   const product = productsData.find(p => p.id === parseInt(id || '0'));
 
@@ -49,12 +54,12 @@ const ProductDetailPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300 slide-in-top">
+    <div className={`min-h-screen bg-custom-bg dark:bg-gray-900 transition-colors duration-300 ${isLoaded ? 'slide-in-top' : 'opacity-0'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
-          className="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors duration-200"
+          className={`flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors duration-200 ${isLoaded ? 'slide-in-left animate-delay-200' : 'opacity-0'}`}
         >
           <ArrowLeft className="h-5 w-5" />
           <span>Retour</span>
@@ -62,8 +67,8 @@ const ProductDetailPage = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
-          <div>
-            <div className="aspect-square rounded-lg overflow-hidden mb-4">
+          <div className={`${isLoaded ? 'fade-in-up animate-delay-300' : 'opacity-0'}`}>
+            <div className={`aspect-square rounded-lg overflow-hidden mb-4 ${isLoaded ? 'zoom-in animate-delay-400' : 'opacity-0'}`}>
               <img
                 src={product.images[selectedImage]}
                 alt={product.name}
@@ -94,8 +99,8 @@ const ProductDetailPage = () => {
           </div>
 
           {/* Product Details */}
-          <div>
-            <div className="mb-4">
+          <div className={`${isLoaded ? 'slide-in-right animate-delay-300' : 'opacity-0'}`}>
+            <div className={`mb-4 ${isLoaded ? 'fade-in-up animate-delay-400' : 'opacity-0'}`}>
               <span className="text-sm text-blue-600 dark:text-blue-400 font-medium uppercase tracking-wide">
                 {product.category}
               </span>
@@ -104,7 +109,7 @@ const ProductDetailPage = () => {
               </h1>
             </div>
 
-            <div className="flex items-center space-x-4 mb-6">
+            <div className={`flex items-center space-x-4 mb-6 ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
               <span className="text-3xl font-bold text-blue-600 dark:text-blue-400">
                 ${product.price}
               </span>
@@ -120,7 +125,7 @@ const ProductDetailPage = () => {
               )}
             </div>
 
-            <div className="mb-6">
+            <div className={`mb-6 ${isLoaded ? 'fade-in-up animate-delay-600' : 'opacity-0'}`}>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
                 {product.description}
               </p>
