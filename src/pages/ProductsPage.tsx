@@ -37,7 +37,6 @@ const ProductsPage: React.FC = () => {
     { id: 3, name: 'Design Minimaliste Chic', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des3.jpg?raw=true', description: 'Lignes épurées pour intérieur moderne' },
     { id: 4, name: 'Design Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des4.jpg?raw=true', description: 'Œuvre d\'art fonctionnelle en bois' },
     { id: 5, name: 'Design Premium Luxe', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des5.jpg?raw=true', description: 'Design haut de gamme en bois noble' },
-    { id: 6, name: 'Design Créatif Original', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des6.jpg?raw=true', description: 'Design unique pour se démarquer' },
     { id: 7, name: 'Design Personnalisé', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des7.jpg?raw=true', description: 'Design entièrement personnalisé selon vos besoins' },
     { id: 8, name: 'Design Signature Exclusive', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des8.jpg?raw=true', description: 'Design signature pour une identité forte' },
     { id: 9, name: 'Design Innovant Unique', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/des9.jpg?raw=true', description: 'Design révolutionnaire pour projets exceptionnels' },
