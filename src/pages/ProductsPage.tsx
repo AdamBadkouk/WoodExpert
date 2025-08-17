@@ -45,7 +45,7 @@ const ProductsPage: React.FC = () => {
   ];
 
   const logoProducts = [
-    { id: 1, name: 'Logo Corporate', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo1.jpg?raw=true', description: 'Logo professionnel pour entreprise' },
+    { id: 1, name: 'Logo Corporate', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logoo.jpg?raw=true', description: 'Logo professionnel pour entreprise' },
     { id: 2, name: 'Logo Design Moderne', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo2.jpg?raw=true', description: 'Design contemporain pour votre marque' },
     { id: 3, name: 'Logo Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo3.jpg?raw=true', description: 'Logo sculpté à la main avec finition artisanale' },
     { id: 4, name: 'Logo Minimaliste Chic', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo4.jpg?raw=true', description: 'Design épuré pour une image moderne' },
@@ -63,13 +63,7 @@ const ProductsPage: React.FC = () => {
       {/* Products Section */}
       <section className="py-12 sm:py-16 pt-20 sm:pt-24 bg-custom-bg dark:bg-custom-dark-bg transition-colors duration-300">
         <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12">
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 px-4 ${isLoaded ? 'zoom-in animate-delay-200' : 'opacity-0'}`}>
-              <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-500 to-blue-200 bg-clip-text text-transparent drop-shadow-lg">
-                Nos Produits
-              </span>
-            </h2>
-          </div>
+          
           
           {/* Category Navigation - Floating Dock Style */}
           <div className={`flex justify-center mb-8 sm:mb-12 px-4 ${isLoaded ? 'zoom-in animate-delay-300' : 'opacity-0'}`}>
