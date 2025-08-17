@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Check, Truck, Shield, RotateCcw } from 'lucide-react';
-import productsData from '../data/products.json';
 
 const ProductDetailPage = () => {
   const { id } = useParams();
@@ -13,7 +12,28 @@ const ProductDetailPage = () => {
     setIsLoaded(true);
   }, []);
 
-  const product = productsData.find(p => p.id === parseInt(id || '0'));
+  // Sample product data - replace with your actual product data
+  const sampleProduct = {
+    id: 1,
+    name: "Bureau Exécutif en Chêne",
+    category: "bureaux",
+    price: 899,
+    originalPrice: 1099,
+    description: "Bureau exécutif en chêne massif fait à la main avec tiroirs de rangement intégrés et gestion des câbles. Parfait pour les bureaux à domicile professionnels.",
+    images: [
+      "https://images.pexels.com/photos/6585751/pexels-photo-6585751.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/4050288/pexels-photo-4050288.jpeg?auto=compress&cs=tinysrgb&w=800"
+    ],
+    inStock: true,
+    featured: true,
+    specs: {
+      material: "Chêne Massif",
+      dimensions: "60\" L x 30\" P x 30\" H",
+      finish: "Huile Naturelle"
+    }
+  };
+
+  const product = sampleProduct;
 
   if (!product) {
     return (

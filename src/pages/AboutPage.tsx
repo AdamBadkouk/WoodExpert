@@ -27,56 +27,74 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
 
             {/* Phone Card */}
-            <div className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer ${isLoaded ? 'zoom-in animate-delay-400' : 'opacity-0'}`}>
-              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+            <a 
+              href="https://wa.me/212661756580" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer block transition-all duration-300 hover:bg-white/12 hover:border-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/20 max-[767px]:hover:bg-white/8 max-[767px]:hover:border-white/10 max-[767px]:hover:shadow-lg ${isLoaded ? 'zoom-in animate-delay-400' : 'opacity-0'}`}
+            >
+              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg max-[767px]:group-hover:scale-100 max-[767px]:group-hover:rotate-0">
                 <Phone className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-900 dark:max-[767px]:group-hover:text-white">
                 Téléphone
               </h3>
-              <a href="https://wa.me/212661756580" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+              <span className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-600 dark:max-[767px]:group-hover:text-gray-300">
                 +212 661 756 580
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Email Card */}
-            <div className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}>
-              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+            <a 
+              href="mailto:cncwoodexpert@gmail.com"
+              className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer block transition-all duration-300 hover:bg-white/12 hover:border-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/20 max-[767px]:hover:bg-white/8 max-[767px]:hover:border-white/10 max-[767px]:hover:shadow-lg ${isLoaded ? 'zoom-in animate-delay-500' : 'opacity-0'}`}
+            >
+              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg max-[767px]:group-hover:scale-100 max-[767px]:group-hover:rotate-0">
                 <Mail className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-900 dark:max-[767px]:group-hover:text-white">
                 E-mail
               </h3>
-              <a href="mailto:cncwoodexpert@gmail.com" className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 break-all">
+              <span className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-600 dark:max-[767px]:group-hover:text-gray-300 break-all">
                 cncwoodexpert@gmail.com
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Instagram Card */}
-            <div className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer ${isLoaded ? 'zoom-in animate-delay-600' : 'opacity-0'}`}>
-              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+            <a 
+              href="https://www.instagram.com/woodexpert.ma/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer block transition-all duration-300 hover:bg-white/12 hover:border-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/20 max-[767px]:hover:bg-white/8 max-[767px]:hover:border-white/10 max-[767px]:hover:shadow-lg ${isLoaded ? 'zoom-in animate-delay-600' : 'opacity-0'}`}
+            >
+              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg max-[767px]:group-hover:scale-100 max-[767px]:group-hover:rotate-0">
                 <Instagram className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-900 dark:max-[767px]:group-hover:text-white">
                 Instagram
               </h3>
-              <a href="https://www.instagram.com/woodexpert.ma/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+              <span className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-600 dark:max-[767px]:group-hover:text-gray-300">
                 @woodexpert.ma
-              </a>
-            </div>
+              </span>
+            </a>
 
             {/* Facebook Card */}
-            <div className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer ${isLoaded ? 'zoom-in animate-delay-700' : 'opacity-0'}`}>
-              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+            <a 
+              href="https://www.facebook.com/woodexpertstore" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={`glass-card p-4 sm:p-6 rounded-xl text-center group cursor-pointer block transition-all duration-300 hover:bg-white/12 hover:border-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/20 max-[767px]:hover:bg-white/8 max-[767px]:hover:border-white/10 max-[767px]:hover:shadow-lg ${isLoaded ? 'zoom-in animate-delay-700' : 'opacity-0'}`}
+            >
+              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg max-[767px]:group-hover:scale-100 max-[767px]:group-hover:rotate-0">
                 <Facebook className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-900 dark:max-[767px]:group-hover:text-white">
                 Facebook
               </h3>
-              <a href="https://www.facebook.com/woodexpertstore" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300">
+              <span className="text-gray-600 dark:text-gray-300 leading-relaxed text-xs sm:text-sm group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-600 dark:max-[767px]:group-hover:text-gray-300">
                 woodexpert Store
-              </a>
-            </div>
+              </span>
+            </a>
           </div>
         </div>
       </section>
@@ -95,7 +113,7 @@ const AboutPage = () => {
             </p>
           </div>
           
-          <div className={`glass-card rounded-xl overflow-hidden group ${isLoaded ? 'zoom-in animate-delay-400' : 'opacity-0'}`}>
+          <div className={`glass-card rounded-xl overflow-hidden group transition-all duration-300 hover:bg-white/12 hover:border-blue-300/30 hover:shadow-2xl hover:shadow-blue-500/20 max-[767px]:hover:bg-white/8 max-[767px]:hover:border-white/10 max-[767px]:hover:shadow-lg ${isLoaded ? 'zoom-in animate-delay-400' : 'opacity-0'}`}>
             <div className="aspect-w-16 aspect-h-9 h-64 sm:h-80 lg:h-96">
               <iframe
                 src="https://maps.google.com/maps?q=CNC+WOOD+EXPERT,+N%C2%B060,+Zone+Industrielle,+Tassila+III,+Agadir,+Morocco&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -110,10 +128,10 @@ const AboutPage = () => {
               />
             </div>
             <div className="p-4 sm:p-6 text-center">
-              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg">
+              <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700 rounded-full flex items-center justify-center text-white mb-3 sm:mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg max-[767px]:group-hover:scale-100 max-[767px]:group-hover:rotate-0">
                 <MapPin className="h-6 w-6 sm:h-8 sm:w-8" />
               </div>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300 max-[767px]:group-hover:text-gray-900 dark:max-[767px]:group-hover:text-white">
                 Notre Atelier
               </h3>
               <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
@@ -124,9 +142,9 @@ const AboutPage = () => {
                 href="https://maps.app.goo.gl/gZcXnMq9t99uwbgB7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group"
+                className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group max-[767px]:hover:from-white max-[767px]:hover:to-blue-50 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
               >
-                <MapPin className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <MapPin className="h-5 w-5 mr-2 group-hover:translate-x-1 transition-transform duration-300 max-[767px]:group-hover:translate-x-0" />
                 Voir sur Google Maps
               </a>
             </div>

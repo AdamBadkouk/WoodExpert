@@ -73,7 +73,7 @@ const ProductsPage: React.FC = () => {
           
           {/* Category Navigation - Floating Dock Style */}
           <div className={`flex justify-center mb-8 sm:mb-12 px-4 ${isLoaded ? 'zoom-in animate-delay-300' : 'opacity-0'}`}>
-            <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-2 border border-white/20 dark:border-gray-700/20 shadow-2xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300">
+            <div className="bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-2 border border-white/20 dark:border-gray-700/20 shadow-2xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 max-[767px]:hover:bg-white/10 dark:max-[767px]:hover:bg-gray-800/10">
               <div className="flex space-x-2 sm:space-x-4 overflow-x-auto scrollbar-hide">
                 {categories.map((category, index) => (
                   <button
@@ -82,14 +82,14 @@ const ProductsPage: React.FC = () => {
                     className={`font-medium transition-all duration-300 relative group py-2 px-3 sm:px-4 whitespace-nowrap text-sm sm:text-base rounded-lg ${
                       activeCategory === index
                         ? 'text-blue-600 dark:text-blue-400 bg-white/20 dark:bg-gray-700/20'
-                        : 'text-blue-300 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white/10 dark:hover:bg-gray-700/10'
+                        : 'text-blue-300 dark:text-blue-200 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-white/10 dark:hover:bg-gray-700/10 max-[767px]:hover:text-blue-300 dark:max-[767px]:hover:text-blue-200 max-[767px]:hover:bg-transparent dark:max-[767px]:hover:bg-transparent'
                     }`}
                   >
                     {category}
                     <span className={`absolute left-3 bottom-1 h-0.5 bg-gradient-to-r from-blue-400 to-blue-600 transition-all duration-300 ease-out ${
                       activeCategory === index
                         ? 'w-[calc(100%-24px)]'
-                        : 'w-0 group-hover:w-[calc(100%-24px)]'
+                        : 'w-0 group-hover:w-[calc(100%-24px)] max-[767px]:group-hover:w-0'
                     }`}></span>
                   </button>
                 ))}
@@ -107,7 +107,7 @@ const ProductsPage: React.FC = () => {
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 max-[767px]:hover:scale-100"
                       />
                     </div>
                     <div className="p-4 sm:p-6">
@@ -115,7 +115,7 @@ const ProductsPage: React.FC = () => {
                       href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                      className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm max-[767px]:hover:from-white max-[767px]:hover:to-blue-50 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                     >
                         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                         À propos de ce produit
@@ -131,7 +131,7 @@ const ProductsPage: React.FC = () => {
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto max-[767px]:hover:bg-transparent max-[767px]:hover:text-blue-600 dark:max-[767px]:hover:text-blue-400 max-[767px]:hover:border-blue-600 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                 >
                   <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                   Pour un design personnalisé contactez-nous
@@ -150,7 +150,7 @@ const ProductsPage: React.FC = () => {
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 max-[767px]:hover:scale-100"
                       />
                     </div>
                     <div className="p-4 sm:p-6">
@@ -158,7 +158,7 @@ const ProductsPage: React.FC = () => {
                         href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm max-[767px]:hover:from-white max-[767px]:hover:to-blue-50 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                       >
                         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                         À propos de ce produit
@@ -174,7 +174,7 @@ const ProductsPage: React.FC = () => {
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto max-[767px]:hover:bg-transparent max-[767px]:hover:text-blue-600 dark:max-[767px]:hover:text-blue-400 max-[767px]:hover:border-blue-600 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                 >
                   <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                   Pour un design personnalisé contactez-nous
@@ -193,7 +193,7 @@ const ProductsPage: React.FC = () => {
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 max-[767px]:hover:scale-100"
                       />
                     </div>
                     <div className="p-4 sm:p-6">
@@ -201,7 +201,7 @@ const ProductsPage: React.FC = () => {
                         href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm max-[767px]:hover:from-white max-[767px]:hover:to-blue-50 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                       >
                         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                         À propos de ce produit
@@ -217,7 +217,7 @@ const ProductsPage: React.FC = () => {
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto max-[767px]:hover:bg-transparent max-[767px]:hover:text-blue-600 dark:max-[767px]:hover:text-blue-400 max-[767px]:hover:border-blue-600 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                 >
                   <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                   Pour un design personnalisé contactez-nous
@@ -236,7 +236,7 @@ const ProductsPage: React.FC = () => {
                       <img 
                         src={product.image} 
                         alt={product.name}
-                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300 max-[767px]:hover:scale-100"
                       />
                     </div>
                     <div className="p-4 sm:p-6">
@@ -244,7 +244,7 @@ const ProductsPage: React.FC = () => {
                         href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je suis intéressé(e) par le produit: ${product.name}. Pourriez-vous me donner plus d'informations?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm"
+                        className="w-full bg-gradient-to-r from-white to-blue-50 text-blue-800 font-semibold py-2.5 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-blue-50 hover:to-white transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-xs sm:text-sm max-[767px]:hover:from-white max-[767px]:hover:to-blue-50 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                       >
                         <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                         À propos de ce produit
@@ -260,7 +260,7 @@ const ProductsPage: React.FC = () => {
                   href={`https://wa.me/212661756580?text=${encodeURIComponent(`Bonjour, je souhaiterais discuter d'un design personnalisé. Pouvez-vous m'aider?`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto"
+                  className="border-2 border-blue-600 text-blue-600 dark:text-blue-400 font-semibold py-3 sm:py-4 px-4 sm:px-8 rounded-lg hover:bg-gradient-to-r hover:from-white hover:to-blue-50 hover:text-blue-800 hover:border-blue-200 transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 hover:scale-105 group flex items-center justify-center gap-2 text-sm sm:text-base lg:text-lg w-full sm:w-auto max-[767px]:hover:bg-transparent max-[767px]:hover:text-blue-600 dark:max-[767px]:hover:text-blue-400 max-[767px]:hover:border-blue-600 max-[767px]:hover:shadow-lg max-[767px]:hover:transform-none"
                 >
                   <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                   Pour un design personnalisé contactez-nous

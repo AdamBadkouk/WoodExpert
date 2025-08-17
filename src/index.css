@@ -151,6 +151,50 @@
   box-shadow: 0 0 20px rgba(96, 165, 250, 0.3), 0 8px 30px rgba(0, 0, 0, 0.4);
 }
 
+/* Mobile responsive hover effect disabling */
+@media (max-width: 767px) {
+  .blue-glow-hover:hover {
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4), 0 0 16px rgba(59, 130, 246, 0.3), 0 0 24px rgba(59, 130, 246, 0.2);
+    transform: none;
+  }
+  
+  .blue-glow-border:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.3), inset 0 0 8px rgba(59, 130, 246, 0.1);
+  }
+  
+  .btn-blue-glow:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), rgba(37, 99, 235, 0.9));
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.4), 0 4px 15px rgba(59, 130, 246, 0.3);
+    transform: none;
+  }
+  
+  .card-blue-glow:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2), 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: none;
+  }
+  
+  .card-blue-glow:hover::before {
+    opacity: 0;
+  }
+  
+  .glass-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .blue-glow-hover:hover {
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.4), 0 0 16px rgba(96, 165, 250, 0.3), 0 0 24px rgba(96, 165, 250, 0.2);
+  }
+  
+  .dark .card-blue-glow:hover {
+    border-color: rgba(96, 165, 250, 0.2);
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.2), 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
 /* Loading Animation Styles */
 @keyframes loadingProgress {
   0% {
