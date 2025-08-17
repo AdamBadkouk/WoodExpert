@@ -33,7 +33,7 @@ const Header = () => {
     <>
       {/* Floating Dock with Logo - Always visible */}
       <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
-        <nav className="flex items-center justify-between bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-0 border border-white/20 dark:border-gray-700/20 shadow-2xl w-[320px] md:w-[600px] hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 max-[767px]:hover:bg-white/10 dark:max-[767px]:hover:bg-gray-800/10">
+        <nav className="flex items-center justify-between bg-white/10 dark:bg-gray-800/10 backdrop-blur-md rounded-2xl px-2 md:px-4 py-0 border border-white/20 dark:border-gray-700/20 shadow-2xl w-[400px] md:w-[700px] hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300 max-[767px]:hover:bg-white/10 dark:max-[767px]:hover:bg-gray-800/10">
           {/* Left side - Logo and Desktop Navigation */}
           <div className="flex items-center">
             {/* Logo */}

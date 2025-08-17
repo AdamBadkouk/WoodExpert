@@ -20,7 +20,7 @@ const Footer = () => {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
               <img 
-                src="https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo1.png?raw=true" 
+                src="/pics/logo1.png" 
                 alt="woodexpert Logo" 
                 className="w-24 h-24 mx-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300 max-[767px]:hover:scale-100"
               />

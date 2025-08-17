@@ -45,7 +45,7 @@ const ProductsPage: React.FC = () => {
   ];
 
   const logoProducts = [
-    { id: 1, name: 'Logo Corporate', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logoo.jpg?raw=true', description: 'Logo professionnel pour entreprise' },
+    { id: 1, name: 'Logo Corporate', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo1.jpg?raw=true', description: 'Logo professionnel pour entreprise' },
     { id: 2, name: 'Logo Design Moderne', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo2.jpg?raw=true', description: 'Design contemporain pour votre marque' },
     { id: 3, name: 'Logo Artistique Sculpté', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo3.jpg?raw=true', description: 'Logo sculpté à la main avec finition artisanale' },
     { id: 4, name: 'Logo Minimaliste Chic', image: 'https://github.com/AdamBadkouk/WoodExpert/blob/main/pics/logo4.jpg?raw=true', description: 'Design épuré pour une image moderne' },
